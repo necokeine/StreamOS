@@ -1,0 +1,233 @@
+StreamOS - a free operating system in Object Pascal
+Copyright (C) Oleksandr Natalenko, 2004-2009
+January, 16, 2009
+-----------------
+		Universal Program License
+		version 3.3, (C) Oleksandr Natalenko, 2004-2009
+
+		Basics
+
+
+	Everyone is allowed to distribute and to apply the License freely.
+
+	The License is created to provide a freedom of using, modifying,
+distributing and receiving open, free and free-of-charge programs, their copies,
+source code and documentation. The License may be applied to any free and
+free-of-charge program with open source code. You may apply the License to your
+programs without special allowance of the License author. The License ensures
+you a right of public, free and free-of-charge receiving copies of programs,
+that are distributed under the terms and conditions of the License, their source
+code, documentation, a possibility to modify copies of programs, their source
+code and documentation, a possibility to distribute them in condition of
+following the terms of the License.
+
+	The License can be translated into any language in condition of keeping
+the exact contents of the License. The translations of the License are not
+official. English is the official language of the License.
+
+	Each new version of the License is numbered in increasing order. All
+previous versions are still applicable to your programs.
+
+	Only the author of the License has a right of modifying the License.
+
+	By applying the License to your program you agree with the terms and
+conditions of the License and you undertake to follow them.
+
+
+		Definitions
+
+
+	"The License" refers to the version of Universal Program License that is
+pointed in the header of this document.
+
+	"The program" means the result of writing source code in any form and
+translating it into machine code that gives defined result by executing it with
+adequate equipment.
+
+	"The copy of the program" means the identical to original stand-alone
+copy of the program.
+
+	"To distribute" means to transmit the copy of the program, its source
+code, documentation, the copy of the License and all rights simultaneously under
+the terms and conditions of the License. This term also includes a desire to
+transmit the copy of the program, its source code and documentation expressed by
+giving a possibility to get the copy of the program, its source code and
+documentation in a free, free-of-charge and public way (e.g., from a web-site).
+
+	"To modify" means to change the program, the copy of the program, its
+source code and/or documentation according to the terms and conditions of the
+License.
+
+	"To use" means a possibility to use the program, the copy of the
+program, its source code and documentation according to the terms and conditions
+of the License.
+
+	"To receive" means to get the copy of the program, its source code,
+documentation, the copy of the License and all rights and duties simultaneously
+by receiver according to the terms and conditions of the License.
+
+	"To join" means to integrate two or more programs or their copies, their
+source code and documentation into one program under one name.
+
+	"Free program" means a program that is transmitted to other users
+without any restrictions according to the terms and conditions of the License.
+
+	"Closed program" means a program that has no public, free and
+free-of-charge access to its source or binary code or documentation.
+
+	"Fee-paying program" means that a program, its source code or
+documentation from people, who involved directly in program's developing, are
+distributed for rent.
+
+	"Source code" means the human-readable form of the program that fits the
+best to modify the program.
+
+	"Documentation" means electronic information about a program, that
+explains the principles of a program, informs about ways of using a program or
+gives any other information about a program. Documentation is considered to be a
+part of the program.
+
+	First mentioning about a program, that is distributed under terms and
+conditions of the License, in each article looks like "the program, that is
+distributed under terms and conditions of the License". Other mentions about a
+program in the same article looks like "the program".
+
+	Each licensee is addressed as "you".
+
+
+		Terms and conditions
+
+
+1. The License can be applied to any program, if its further existing doesn't
+conflict with the terms and conditions of the License.
+
+
+2. You may distribute copies of the program, that is distributed under terms and
+conditions of the License, by following the next conditions:
+
+a) the copy of the program must be distributed with all source code to all its
+parts, also with executing or installing scripts if they exist. Base components
+(e.g. compiler, operating system, foreign libraries) are not obligatory to be
+distributed with the program;
+
+b) the copy of the program must be provided with electronic or printed copy of
+the License, that has infinite uninterrupted time of act on the copy of the
+program, its source code and its documentation;
+
+c) the copy of the program must be distributed with all its documentation, that
+is available, or with links to its documentation in shared places (e.g.
+web-site). The documentation from the authors of the program must be accessible
+publicly, free and free-of-charge from shared places (e.g. from web-site);
+
+d) the copy of the program, its source code and documentation must stay free and
+free-of-charge after receiving, using, modifying and distributing;
+
+e) by distributing the copy of the program you can't transmit to the user less
+rights than is defined by the License.
+
+	If the copy of the program is not provided by its source code, the
+source code must be accessible publicly, freely and free-of-charge from shared
+places (e.g. from web-site).
+
+	Gratuitousness of receiving the copy of the program, its source code and
+documentation is not dispersed on physical data storage, attendance of data
+writing, receiving the copy of the program, its source code and documentation
+via other fee-paying ways (e.g. via post or Internet) and on user support,
+provided by people, who are not involved directly in the developing process of
+the program.
+
+	This article excludes a monopoly of supporting the users of the program
+by its developers and authors. The support from the developers and from the
+authors of the program must be public, free and free-of-charge. The support from
+the developers or from the authors is not obligatory.
+
+	Gratuitousness of documentation is not dispersed on the documentation,
+that is written by the people, who are not involved directly in the developing
+of the program.
+
+	The article doesn't exclude a possibility of voluntary encouraging of
+the developers or the authors of the program.
+
+
+3. You may modify the program, that is distributed under terms and conditions of
+the License, its parts, copies, source code and documentation, and distribute
+them, following the next conditions:
+
+a) you must include modified source code, warnings about changes and the list of
+changes;
+
+b) you are to make all program's documentation printable;
+
+c) the copy of the program, its source code and documentation must be
+distributed under the terms and conditions of the License.
+
+
+4. You may join programs, that are distributed under terms and conditions of the
+License, their parts, source code and documentation together in any way, making
+a common list of changes and authors.
+
+	The License allows to join the program, that is distributed under
+another free license, if it's not prohibited by that license. You can't join
+programs, that are fee-paying or have closed source code.
+
+	If the part of the program is detached, it's distributed under terms and
+conditions of the License. Using another license is prohibited.
+
+	The License prohibits to break the terms and conditions of other
+licenses.
+
+
+5. The License prohibits getting the patent on the program, that is distributed
+under terms and conditions of the License, its copies, source code and
+documentation.
+
+
+6. The License doesn't act on the program, its copies, source code and
+documentation, that were created to make any damage or to act out of law (e.g.
+computer viruses, spy software).
+
+	It's prohibited to use the program, that is distributed under terms and
+conditions of the License, its copies, source code and documentation for
+military aims.
+
+
+7. There is no warranty for the program, that is distributed under terms and
+conditions of the License. The entire risk as to the quality and performance of
+the program is with you. Should the program prove defective, you assume the cost
+of all necessary servicing, repair or correction.
+
+
+		Appendixes
+
+
+	Appendix A:  How to apply the License to your programs.
+
+	To apply the License to your programs you are to add at the beginning of
+this document the following lines:
+
+	<The name of the program>
+	Copyright (C) <Author>, 20xx
+	<Additional information about the program and its author>
+
+	You have to point that the source code is distributed under terms and
+conditions of the License in the header of each file in the source code of your
+program.
+
+
+	Appendix B: How to get the License.
+
+	The newest version of the License is publicly available from the
+web-site: http://postfactum.pl.ua/myfiles/upl.txt
+
+
+	Appendix C: The recommendation of using the License.
+	
+	As the License is constantly developed by its author, it's recommended
+to use the last version of the License.
+
+
+	Appendix D: How to contribute.
+
+	If you are interested in developing of this License or have some ideas
+to improve it, please, write to the author of the License:
+mailto:pfactum@gmail.com

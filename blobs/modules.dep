@@ -1,0 +1,6 @@
+[common]
+count=1
+
+[module_1]
+file=displays.dll
+type=console

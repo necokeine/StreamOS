@@ -1,0 +1,8 @@
+LASTDRIVE=Z
+BUFFERS=40
+FILES=70
+DOS=HIGH,UMB
+DEVICE=\sys\drv\jemmex\jemmex.exe
+DEVICEHIGH=\sys\drv\jemmex\jload.exe \sys\drv\dma\xdma32.dll /W /P:80867010
+DEVICEHIGH=\sys\drv\jemmex\jload.exe \sys\drv\cdrom\xcdrom32.dll /W /32 /P:80867010 /D:STCD
+SHELL=\COMMAND.COM /P=\AUTOEXEC.BAT

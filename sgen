@@ -1,0 +1,113 @@
+#!/usr/bin/env bash
+
+. scripts/vars.sh
+. scripts/compile_win32.sh
+. scripts/compile_app.sh
+. scripts/compile_apps.sh
+. scripts/compile_mods.sh
+. scripts/clean.sh
+. scripts/count.sh
+. scripts/buildiso.sh
+. scripts/qemu.sh
+. scripts/bochs.sh
+. scripts/tags.sh
+
+params=${1+"$@"}
+
+setvars
+
+if test "$1" = "app"; then
+	for eachapp in $params
+	do
+		if test "$eachapp" != "app"; then
+			cd apps/$eachapp
+			compile_app $eachapp.pp
+			mv $eachapp.dll $eachapp
+			cd ../..
+		fi
+	done
+else
+
+	for each in $params
+	do
+		if test "$each" = "help"; then
+			echo StreamOS building script
+			echo by Oleksandr Natalenko aka post-factum, 2008-2009
+			echo Possible targets:
+			echo "  kernel - generates only kernel"
+			echo "  displays - generates displays module"
+			echo "  mods - generates lowlevel modules"
+			echo "  apps - builds all applications"
+			echo "  all - generates all above"
+			echo "  sys - all + iso + runs StreamOS under qemu"
+			echo "  app appname - compiles appname application"
+			echo "  clean - cleans source code tree including applications"
+			echo "  count - counts an amount of source code lines"
+			echo "  iso - builds an ISO-image"
+			echo "  qemu - runs StreamOS under qemu"
+			echo "  bochs - runs StreamOS under bochs"
+			echo "  tags - generate tags for code"
+		fi
+
+		if test "$each" = "kernel"; then
+			compile_win32 streamos.pp
+			compile_win32 smem.pp
+		fi
+
+		if test "$each" = "displays"; then
+			compile_win32 displays.pp
+		fi
+
+		if test "$each" = "mods"; then
+			compile_mods
+		fi
+
+		if test "$each" = "apps"; then
+			compile_apps
+		fi
+
+		if test "$each" = "all"; then
+			compile_win32 streamos.pp
+			compile_win32 displays.pp
+			compile_win32 smem.pp
+			compile_mods
+			compile_apps
+		fi
+
+		if test "$each" = "sys"; then
+			compile_win32 streamos.pp
+			compile_win32 displays.pp
+			compile_win32 smem.pp
+			compile_mods
+			compile_apps
+			build_iso
+			run_qemu
+		fi
+
+
+		if test "$each" = "clean"; then
+			clean_all
+		fi
+
+		if test "$each" = "count"; then
+			count_lines
+		fi
+
+		if test "$each" = "iso"; then
+			build_iso
+		fi
+	
+		if test "$each" = "qemu"; then
+			run_qemu
+		fi
+
+		if test "$each" = "bochs"; then
+			run_bochs
+		fi
+
+		if test "$each" = "tags"; then
+			gen_tags
+		fi
+	done
+fi
+

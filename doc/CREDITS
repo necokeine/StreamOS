@@ -1,0 +1,102 @@
+﻿Here are all people, whom I thank to:
+
+N - name
+C - nick
+E - e-mail
+W - web-address
+P - part
+S - address
+
+-----------
+
+N: Ivan Kozak
+E: mailto:iv_kozak@ukr.net
+W: http://bespin.org/~polit
+P: made PolitOS, excellent my old site design and "StreamCORE" name
+S: Ukraine, Kyiv
+
+N: Andrii Petrus'
+C: Blaze
+E: mailto:blaze@vizit-net.com
+W: http://blazewerewolf.wordpress.com/
+P: ideological consulting, StreamOS slogan and logo
+S: Ukraine, Poltavs'ka oblast', Kremenchuk
+
+N: Oleksandr Pundyk
+C: nobody
+E: mailto:wsppr@rambler.ru
+P: former StreamOS core developer, the author of many ideas for new StreamOS branch, sshell author
+S: Ukraine, Khmel'nyts'kyi
+
+C: Romtek
+P: screen working consulting for first StreamOS branch
+
+C: volvo877
+W: http://forum.sources.ru/
+P: cross-compiling help, apmlib fixes
+
+N: Ivan Sorokin
+C: eXz
+E: mailto:exz@mail.ru
+W: http://lizard.h15.ru/
+P: sorting function for first StreamOS branch
+S: Russia
+
+N: Volodymyr Kolybenko
+E: mailto:druiks@gmail.com
+W: http://druik.livejournal.com/
+P: UPL grammar
+S: Ukraine, Kyivs'ka oblast', Pereyaslav-Khmel'nyts'kyi
+
+N: Serhii Kochergin
+C: Kacher
+P: first StreamOS branch testing
+S: Ukraine, Zhytomyrs'ka oblast', Novograd-Volyns'kyi
+
+N: Roman I Khimov
+W: http://osrc.info/
+P: publishing news about StreamOS/VM/CORE
+S: Russia
+
+N: everybody from lafox.net forum, who consulted me about UPL
+
+N: Oleksandr Sokil
+E: mailto:shurik_shurik@ukr.net
+P: access keys consulting
+S: Ukraine, Poltavs'ka oblast', Novi Sanzhary
+
+N: Volodymyr Pouzanov
+C: Farcaller
+E: mailto:farcaller@gmail.com
+W: http://hackndev.com/
+P: consulting about bash-scripts, excellent hosting, timers consulting
+S: Ukraine, Kyiv
+
+N: Yurii Lunyov
+C: Bitterman
+E: mailto:koolkhel@mail.ru
+E: mailto:bitterman@ya.ru
+W: http://bitterman.narod.ru
+W: http://koolkhel.livejournal.com/
+P: hard criticizm, code style consulting and different minims
+S: Russia, Rostovskaya oblast', Taganrog
+
+N: Anton Kapinus
+C: gln0fate
+E: mailto:gln0fate@gmail.com
+P: StreamOS testing
+S: Ukraine, Poltavs'ka oblast', Kremenchuk
+
+N: Artem Fursenko
+C: flywheel
+W: http://fdevelopers.com/
+P: UPLv3.2 ideas
+S: Ukraine, Dnipropetrovs'k
+
+N: Vladimir Kirillov
+C: Dark Proger
+E: mailto:darkproger@gmail.com
+W: http://darkproger.net/
+P: build system enhancements, so on
+S: Kiev, Ukraine
+

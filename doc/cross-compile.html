@@ -1,0 +1,420 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ru">
+  <head>
+    <meta name="generator" content="OpenACS version 5.2.3b2">
+    <title>Cross-compiling for go32v2 under linux</title>
+    
+      <link rel="stylesheet" type="text/css" href="/resources/acs-templating/lists.css" media="all">
+    
+      <link rel="stylesheet" type="text/css" href="/resources/acs-templating/forms.css" media="all">
+    
+      <link rel="stylesheet" type="text/css" href="/resources/acs-subsite/default-master.css" media="all">
+    
+    <script type="text/javascript" src="/resources/acs-subsite/core.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="/resources/acs-subsite/site-master.css" media="all">
+    <link rel="stylesheet" type="text/css" href="http://www.freepascal.org/css/fp.css" media="all">
+    <link rel="alternate stylesheet" type="text/css" href="http://www.freepascal.org/css/fp-navl.css" media="all" title="Nav-Left">
+    <link rel="shortcut icon" href="http://www.freepascal.org/favicon.ico">
+    
+  
+  </head>
+  <body onload="" lang="ru">
+    
+
+<div id="header">
+ <div id="menu" lang="ru">
+  <a href="http://www.freepascal.org/">Главная</a>
+  <a href="http://www.freepascal.org/news">Новости</a>
+  <a href="http://www.freepascal.org/download.var">Скачать</a> 
+  <a href="http://wiki.freepascal.org/">Вики</a> 
+  <a href="http://community.freepascal.org:10000">Сообщество</a> 
+  <a href="http://www.freepascal.org/docs.var">Документация</a> 
+  <a href="http://www.freepascal.org/mantis/set_project.php?project_id=6">Поиск ошибок</a> 
+ </div>
+ <img src="http://www.freepascal.org/pic/logo.gif" alt="FPC Logo" width="133" height="63" />
+ <div class="spacer"></div>
+ <div id="welcome" lang="ru">
+   
+    Not logged in
+   
+   <a href="/shared/whos-online">0 участника в сети</a>
+   
+    <a href="/register/?return%5furl=%2fbboards%2fmessage%3fmessage%255fid%3d252000%26forum%255fid%3d24083" title="Log in to Free Pascal Community">Вход в систему</a>
+   
+ </div>
+ <h1>free pascal community</h1>
+ <h2>Open source compiler for Pascal and Object Pascal</h2>
+</div>
+
+<div id="content">
+ <div id="sidebar" lang="ru">
+  <h1>Основное</h1>
+  <div class="submenu" lang="ru">
+   <a href="http://www.freepascal.org/">Главная</a>
+   <a href="http://www.freepascal.org/news.var">Новости</a>
+   <a href="http://www.freepascal.org/download.var">Скачать</a> 
+   <a href="http://www.freepascal.org/wiki">Вики</a>
+   <a href="http://community.freepascal.org:10000">Сообщество</a> 
+   <a href="http://www.freepascal.org/docs.var">Документация</a> 
+   <a href="http://www.freepascal.org/mantis/set_project.php?project_id=6">Поиск ошибок</a> 
+  </div>
+
+  <h1>Программистам</h1>
+   <div class="submenu" lang="ru">
+    <a href="http://www.freepascal.org/advantage.var">Преимущества</a>
+    <a href="http://www.freepascal.org/develop.var">Разработка</a>
+    <a href="http://www.freepascal.org/future.var">Планы на будущее</a>
+    <a href="http://www.freepascal.org/probs.var">Известные сложности</a>
+    <a href="http://www.freepascal.org/fpcmac.var">FPC на Mac</a>
+    <a href="http://www.freepascal.org/faq.var">ЧаВо</a>
+    <a href="http://www.freepascal.org/units.var">Модули</a>				  
+    <a href="http://www.freepascal.org/contrib/db.php3">Сторонние модули</a>
+    <a href="http://www.freepascal.org/contrib/add.php3">Внести свой вклад</a>
+    <a href="http://www.freepascal.org/moreinfo.var">Дополнительная информация</a>
+    <a href="http://www.freepascal.org/maillist.var">Рассылки</a>
+    <a href="http://www.freepascal.org/port.var">Миграция с TP7</a>
+    <a href="http://www.freepascal.org/aboutus.var">Авторы</a>
+    <a href="http://www.freepascal.org/credits.var">Заслуги</a>
+    <a href="http://www.freepascal.org/links.var">Ссылки/Зеркальные сайты</a>				  
+   </div>
+					
+  <h1>Инструменты</h1>
+   <div class="submenu" lang="ru">
+    <a href="http://www.freepascal.org/prog.html">Programmer's tools</a>
+    <a href="http://www.freepascal.org/tools/tools.html">Tools</a>
+    <a href="http://www.freepascal.org/tools/delp.html">Delp</a>
+    <a href="http://www.freepascal.org/tools/fpcmake.html">FPCMake</a>
+    <a href="http://www.freepascal.org/tools/h2pas.html">H2Pas</a>
+    <a href="http://www.freepascal.org/tools/ppdep.html">PPDep</a>
+    <a href="http://www.freepascal.org/tools/ppudump.html">PPUDump</a>
+    <a href="http://www.freepascal.org/tools/ppumove.html">PPUMove</a>
+    <a href="http://www.freepascal.org/tools/ptop.html">PtoP</a>
+    <a href="http://www.freepascal.org/tools/rstconv.html">RSTConv</a>
+    <a href="http://www.freepascal.org/tools/tply.html">TPLY</a>
+    <a href="http://www.freepascal.org/fcl/fcl.html">FCL</a>
+    <a href="http://www.freepascal.org/packages/packages.html">Packages</a>
+   </div>
+
+  <h1>Поиск</h1>
+  Искать в документации, форумах и рассылках.
+  <form action="http://community.freepascal.org:10000/search/search" method="get">
+   <p><input type="text" name="q" size="20" maxlength="256"/></p>
+   <p><input type="submit" value="Поиск" name="t"/>
+    <input type="submit" value="Повезёт?" name="t"/>
+   </p>
+  </form>
+
+  <div class="logos">
+   <p><a href="http://www.lazarus.freepascal.org"><img src="http://www.freepascal.org/pic/lazarus_produced_logo.gif" alt="Lazarus Logo" height="57" width="125" /></a></p>
+   <p><a href="http://www.ffii.org"><img src="http://demo.ffii.org/banners/bsod7s_88x31.en.png" alt="EU-Council segfaulted" height="31" width="88" /></a></p>
+   <p><a href="http://sourceforge.net"><img src="http://sourceforge.net/sflogo.php?group_id=2174&amp;type=1" width="88" height="31" alt="SourceForge.net Logo" /></a></p>
+   <p><a href="http://www.toolbox-mag.de/"><img src="http://www.freepascal.org/txlogo.gif" width="128" height="48" alt="Toolbox Logo" /></a></p>
+  </div>
+ </div>
+				
+ <div id="mainbar">
+  <div id="context-bar">
+   <div id="navlinks"></div>
+   
+     <div id="breadcrumbs" lang="ru">
+      <ul>
+       
+         <li><a href="/">Сообщество</a> &#187;</li>
+        
+         <li><a href="/bboards/">Форумы</a> &#187;</li>
+        
+         <li><a href="forum?forum%5fid=24083">Developing for Linux</a> &#187;</li>
+        
+         <li>One message</li>
+        
+      </ul>
+     </div>
+    
+  </div>
+  
+
+<div id="page-body" lang="ru">
+ 
+     <br><h1 class="page-title">Cross-compiling for go32v2 under linux</h1>
+   
+<blockquote>
+<div align='right'>
+  <A href='/notifications/request-new?pretty%5fname=Cross%2dcompiling+for+go32v2+under+linux&amp;return%5furl=%2fbboards%2fmessage%3fmessage%5fid%3d252000%26forum%5fid%3d24083&amp;type%5fid=173140&amp;object%5fid=252000&amp;user%5fid=0'>Notify me of responses</A>
+</div>
+
+
+<table cellspacing=0 cellpadding=3 border=0 width="100%">
+  
+  <tr>
+    
+    <td colspan=2 align="left">
+      <br>First of all excuse me my English, it's not my native language.
+
+The problem occured when i tried to compile a sourcefile for DOS under linux, typing such code:
+
+<PRE>
+[root@localhost 2.3.1]# ./ppc386 -Tgo32v2 ./test.pas 
+Free Pascal Compiler version 2.3.1 [2007/05/27] for i386
+Copyright (c) 1993-2007 by Florian Klaempfl
+Target OS: GO32 V2 DOS extender
+Compiling ./test.pas
+Fatal: Can't find unit System used by Program
+Fatal: Compilation aborted
+</PRE>
+
+Then i tried to include path to unit System:
+
+<PRE>
+[root@localhost 2.3.1]# ./ppc386 -Tgo32v2 -Fu/fpc/rtl/go32v2/ /root/my-big-work/test.pas 
+Free Pascal Compiler version 2.3.1 [2007/05/27] for i386
+Copyright (c) 1993-2007 by Florian Klaempfl
+Target OS: GO32 V2 DOS extender
+Compiling /root/my-big-work/test.pas
+Compiling /fpc/rtl/go32v2/system.pp
+system.pp(34,2) Fatal: Can't open include file "systemh.inc"
+Fatal: Compilation aborted
+</PRE>
+
+I've included lot of paths i could find. After a few attempt i got huge list of errors while compiling `test.pas', so that i couldn't believe it should be so difficult to cross-compile a sourcefile for DOS.
+I've tried to compile a compiler for DOS by getting fpc sources and typing:
+
+<PRE>
+cd compiler
+make clean
+make cycle OS_TARGET=go32v2
+</PRE>
+
+After prolonged compiling ' got such error:
+
+<PRE>
+i386-go32v2-as -o ../../rtl/units/i386-go32v2/prt0.o v2prt0.as
+make: i386-go32v2-as: Command not found
+make: *** [prt0.o] Error 127
+</PRE>
+
+So, what should i do to get a compiler, that could compile programs for DOS? (I'm using Fedora Core 6 (Red Hat Linux kernel) and i would like to run my programs through Dosbox DOS Emulator under FC6)
+    </td>
+  </tr>
+
+
+  
+    <tr>
+      
+      <td colspan=1 align="left">
+        
+           -- <a href="messages-by-user?forum_id=24083&amp;user_id=251990">Alexey Taran</a>, Май 27, 2007 13:01
+        
+      </td>
+      
+        <td align="right"><small>
+          
+            <a href="message-mail?forum_id=24083&amp;message_id=252000">(email)</a>
+          
+       </small></td>
+      
+    </tr>
+  
+</table>
+
+
+</blockquote>
+
+ <br><h1>Answers:</h1>
+ 
+  <h2></h2>
+  <a name="252042"></a>
+  <blockquote>
+  
+
+<table cellspacing=0 cellpadding=3 border=0 width="100%">
+  
+  <tr>
+    
+    <td colspan=2 align="left">
+      <br>Well, you are experimenting in the right direction.&nbsp; What you need is a cross-assembler and linker. Perhaps they are in your distribution, otherwise you need to build them yourself or find them on the internet. Then you can build a go32 by executing a make command in the rtl directory. After that you can cross-compile.
+    </td>
+  </tr>
+
+
+  
+    <tr>
+      
+      <td colspan=1 align="left">
+        
+           -- <a href="messages-by-user?forum_id=24083&amp;user_id=454">Daniël Mantione</a>, Май 27, 2007 15:26
+        
+      </td>
+      
+        <td align="right"><small>
+          
+            <a href="message-mail?forum_id=24083&amp;message_id=252042">(email)</a>
+          
+       </small></td>
+      
+    </tr>
+  
+</table>
+
+
+  </blockquote>
+ 
+  <h2></h2>
+  <a name="252092"></a>
+  <blockquote>
+  
+
+<table cellspacing=0 cellpadding=3 border=0 width="100%">
+  
+  <tr>
+    
+    <td colspan=2 align="left">
+      <br>1. Ok, i've got `binutils' source and compiled a cross-assembler `i386-go32v2-as' & cross-linker `i386-go32v2-ld'. I've putted that to /rtl/go32v2 and tried to run `make'. It was compiled without errors. So i typed:
+
+<PRE>
+cd compiler
+make cycle
+make install
+</PRE>
+
+and tried to compile my `test.pas' using new ppc386 compiler. I've got such error:
+
+<PRE>
+./ppc386 -Tgo32v2 ./test.pas
+Free Pascal Compiler version 2.3.1 [2007/05/27] for i386
+Copyright (c) 1993-2007 by Florian Klaempfl
+Target OS: GO32 V2 DOS extender
+Compiling /root/my-big-work/test.pas
+Fatal: Can't find unit System used by Program
+Fatal: Compilation aborted
+</PRE>
+
+So, where is my mistake? I thought that i've got a cross-compiler, but it isn't true.<BR>
+2. I've tried to make a cross-compiler for win32, but i couldn't understand which target OS set for compiling cross-assembler & linker - `cygwin' or `mingw'? What is the difference between them?<BR><BR>
+---------------------<BR><BR>
+I hope i've done right. My goal is to get a cross-compiler from linux (FC6) to go32v2. So, here is my actions:<BR>
+1. I've got `binutils' source and putted it to /binutils. After
+<PRE>
+cd /binutils
+mkdir cross-utils
+cd ./cross-utils
+../configure --target=i386-pc-go32
+make
+</PRE>
+i've found few new folders with `as-new' and `ld-new', my cross-assembler and cross-linker. I renamed them to `i386-go32v2-as ' and `i386-go32v2-ld', and copied to /usr/bin.<BR>
+2. Having fpc sources, i've typed:
+<PRE>
+cd /fpc/compiler
+make clean
+make cycle
+make install INSTALL_PREFIX=/usr/local
+</PRE>
+So, i've got new compiler, `ppcnew' say. I've continued:
+<PRE>
+cd /fpc/rtl/go32v2
+make distclean # or make clean. I think, it doesn't matter.
+make all OS_TARGET=go32v2 PP=/path_to_new_compiler/ppcnew
+</PRE>
+Some time passed while making, and i've got `i386-go32v2' folder in /fpc/rtl/units. So, i copied it to /path_to_new_compiler/units. After i tried to compile `hello world' and it worked!<BR>
+Thanks a lot, you really helped me to deal with cross-compiling, because i didn't know about the importance of `as' and `ld' utils. :) <BR>
+P.S. I've tried to make a cross-compiler for win32, and it also worked!
+    </td>
+  </tr>
+
+
+  
+    <tr>
+      
+      <td colspan=1 align="left">
+        
+           -- <a href="messages-by-user?forum_id=24083&amp;user_id=251990">Alexey Taran</a>, Май 28, 2007 00:35
+        
+      </td>
+      
+        <td align="right"><small>
+          
+            <a href="message-mail?forum_id=24083&amp;message_id=252092">(email)</a>
+          
+       </small></td>
+      
+    </tr>
+  
+</table>
+
+
+  </blockquote>
+ 
+  <h2></h2>
+  <a name="253286"></a>
+  <blockquote>
+  
+
+<table cellspacing=0 cellpadding=3 border=0 width="100%">
+  
+  <tr>
+    
+    <td colspan=2 align="left">
+      <br>Also have a look at</p>
+<p><a href="http://www.stack.nl/~marcov/buildfaq.pdf">http://www.stack.nl/~marcov/buildfaq.pdf</a></p>
+<p style="margin-bottom: 0px;">for some crosscompiling background info
+    </td>
+  </tr>
+
+
+  
+    <tr>
+      
+      <td colspan=1 align="left">
+        
+           -- <a href="messages-by-user?forum_id=24083&amp;user_id=2823">Marco van de Voort</a>, Июнь 13, 2007 12:25
+        
+      </td>
+      
+        <td align="right"><small>
+          
+            <a href="message-mail?forum_id=24083&amp;message_id=253286">(email)</a>
+          
+       </small></td>
+      
+    </tr>
+  
+</table>
+
+
+  </blockquote>
+ 
+
+<center><form action="message-new">
+  <input type="hidden" name="forum_id" value="24083">
+  <input type="hidden" name="reply_to" value="252000">
+  <input type="submit" value="Contribute an answer">
+</form></center>
+
+  <small>
+    
+  </small>
+
+<p>
+
+</div>
+
+
+  <div id="site-footer">
+    <div class="action-list">
+      <ul>
+        
+          <li><a href="/acs-lang/?package%5fid=656">Изменить язык интерфейса</a></li>
+        
+      </ul>
+    </div>
+  </div>
+ </div>
+</div>
+<div id="footer">
+  Copyright Free Pascal team 1993-2006.<br />
+  Page design by <a href="http://www.sixshootermedia.com">6ix Shooter Media</a>, additional modifications by <a href="mailto:mcposeidon@mcville.net">Pos3idon</a>.
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,14 @@
+[common]
+count=2
+
+[record_1]
+dev=A:\
+mount=/floppy
+fs=fat
+opts=defaults
+
+[record_2]
+dev=Z:\
+mount=/pids
+fs=fat
+opts=defaults

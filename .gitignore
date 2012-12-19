@@ -1,0 +1,8 @@
+!blobs
+*.a
+*.o
+*.ppu
+*.exe
+*.dll
+tags
+build

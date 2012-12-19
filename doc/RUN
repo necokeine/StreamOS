@@ -1,0 +1,20 @@
+There are three ways to run StreamOS.
+
+First, burn ready ISO image to CD-disk and boot from it.
+
+Second, you may use some virtual machine, like VirtualBox, qemu, bochs.
+Build system supports qemu and bochs automatically, you have only to install
+them. Run "./sgen qemu" or "./sgen bochs" and enjoy.
+
+Not to build kernel and ISO-image separately and then to run it, just type
+"./sgen sys" and ISO-image will be generated from current sources and run
+automatically under qemu.
+
+Type login "root" and password "toor" to log in as superuser or "post"/"tsop"
+to login as an ordinary user.
+
+Press CTRL+q and you’ll get next virtual screen activated.
+
+Type "logout" to log out, "reboot" to reboot the computer, "suspend" (currently
+only APM>=1.1 is supported) to suspend it or "poweroff" to turn power off.
+

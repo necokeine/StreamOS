@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<todo version="0.1.20">
+    <note priority="veryhigh" time="1241373262">
+        write API, kernel and apps documentation
+    </note>
+    <note priority="veryhigh" time="1241373322">
+        make SDK dll to have an access from any programming language
+    </note>
+    <note priority="veryhigh" time="1243112852">
+        improve system shutdown
+    </note>
+    <note priority="veryhigh" time="1244303689">
+        improve system calls locking
+    </note>
+    <note priority="high" time="1241373159">
+        StreamFS, journalling, rights
+    </note>
+    <note priority="high" time="1241373223">
+        remaster login according to new StreamFS
+    </note>
+    <note priority="medium" time="1241373334">
+        write or port network drivers
+    </note>
+    <note priority="low" time="1241373235">
+        write pstree application
+    </note>
+    <note priority="low" time="1241373297">
+        make installation system
+    </note>
+    <note priority="verylow" time="1241373247">
+        make a possibility to trace system calls
+    </note>
+    <note priority="verylow" time="1241373273">
+        improve integrate existing dev-printf into kernel
+    </note>
+    <note priority="verylow" time="1241373287">
+        write packaging system to install apps
+    </note>
+</todo>
